@@ -4,7 +4,7 @@ require("core-js");
 require("reflect-metadata");
 require("zone.js/dist/zone");
 require("jquery");
-require("boostrap-sass");
+require("bootstrap-sass");
 require("@angular/common");
 require("@angular/compiler");
 require("@angular/core");

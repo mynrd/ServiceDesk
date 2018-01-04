@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import 'zone.js/dist/zone'
 
 import 'jquery';
-import 'boostrap-sass';
+import 'bootstrap-sass';
 
 import '@angular/common'
 import '@angular/compiler'

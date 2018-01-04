@@ -11,27 +11,24 @@ var common_1 = require("@angular/common");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
-var app_service_1 = require("Service/app.service");
-var Layout_Component_1 = require("./Components/Layout.Component");
+var Home_Component_1 = require("./Components/Home.Component");
 var UrlRoutes = [
     { path: 'Home', loadChildren: 'Modules/Home/Home.Module' },
 ];
-var AppModule = (function () {
-    function AppModule() {
+var HomeModule = (function () {
+    function HomeModule() {
     }
-    AppModule = __decorate([
+    HomeModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 common_1.CommonModule,
                 http_1.HttpModule,
-                router_1.RouterModule.forRoot(UrlRoutes, { useHash: true })
+                router_1.RouterModule.forChild(UrlRoutes)
             ],
-            providers: [app_service_1.AppService],
-            declarations: [Layout_Component_1.LayoutComponent],
-            bootstrap: [Layout_Component_1.LayoutComponent]
+            declarations: [Home_Component_1.HomeComponent]
         })
-    ], AppModule);
-    return AppModule;
+    ], HomeModule);
+    return HomeModule;
 }());
-exports.AppModule = AppModule;
+exports.HomeModule = HomeModule;

@@ -6,10 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppService } from 'Service/app.service';
 
-import { LayoutComponent } from './Components/Layout.Component';
-//import { HeaderComponent } from './Components/Header.Component';
-//import { NavigationComponent } from './Components/Navigation.Component';
-//import { FooterComponent } from './Components/Footer.Component';
+import { HomeComponent } from './Components/Home.Component';
 
 const UrlRoutes: Routes = [
     { path: 'Home', loadChildren: 'Modules/Home/Home.Module' },
@@ -20,10 +17,8 @@ const UrlRoutes: Routes = [
         BrowserModule,
         CommonModule,
         HttpModule,
-        RouterModule.forRoot(UrlRoutes, { useHash: true })
+        RouterModule.forChild(UrlRoutes)
     ],
-    providers: [AppService],
-    declarations: [LayoutComponent],
-    bootstrap: [LayoutComponent]
+    declarations: [HomeComponent]
 })
-export class AppModule { }
+export class HomeModule { }

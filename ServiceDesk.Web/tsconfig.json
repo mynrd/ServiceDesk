@@ -6,8 +6,7 @@
     "sourceMap": false,
     "target": "es5",
     "lib": [ "es6", "dom" ],
-    "baseUrl": "ClientApp",
-    "types": [ "webpack-env" ]
+    "baseUrl": "ClientApp"
   },
   "exclude": [
     "node_modules",

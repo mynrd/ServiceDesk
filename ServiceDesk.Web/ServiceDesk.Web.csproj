@@ -7,13 +7,19 @@
 
   <ItemGroup>
     <None Remove="ClientApp\Modules\App\App.Module.ts" />
+    <None Remove="ClientApp\Modules\Home\Home.Module.ts" />
     <None Remove="ClientApp\Startup.ts" />
     <None Remove="ClientApp\Vendors.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +29,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\Modules\App\App.Module.ts" />
+    <TypeScriptCompile Include="ClientApp\Modules\Home\Home.Module.ts" />
     <TypeScriptCompile Include="ClientApp\Startup.ts" />
     <TypeScriptCompile Include="ClientApp\Vendors.ts" />
   </ItemGroup>
