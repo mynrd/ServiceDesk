@@ -11,11 +11,8 @@ var common_1 = require("@angular/common");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
-var API_Service_1 = require("Services/API.Service");
+var app_service_1 = require("./app.service");
 var Layout_Component_1 = require("./Components/Layout.Component");
-var Header_Component_1 = require("./Components/Header.Component");
-var Navigation_Component_1 = require("./Components/Navigation.Component");
-var Footer_Component_1 = require("./Components/Footer.Component");
 var UrlRoutes = [
     { path: 'Home', loadChildren: 'Modules/Home/Home.Module' },
 ];
@@ -32,15 +29,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot(UrlRoutes, { useHash: true })
         ],
-        providers: [
-            API_Service_1.APIService
-        ],
-        declarations: [
-            Layout_Component_1.LayoutComponent,
-            Header_Component_1.HeaderComponent,
-            Navigation_Component_1.NavigationComponent,
-            Footer_Component_1.FooterComponent
-        ],
+        providers: [app_service_1.AppService],
+        declarations: [Layout_Component_1.LayoutComponent],
         bootstrap: [Layout_Component_1.LayoutComponent]
     })
 ], AppModule);

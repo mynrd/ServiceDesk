@@ -33,20 +33,21 @@ module.exports = {
             minify: {
                 collapseWhitespace: true, collapseInlineTagWhitespace: true, removeRedundantAttributes: true,
                 removeEmptyAttributes: true, removeScriptTypeAttributes: true, removeStyleLinkTypeAttributes: true
-            },
+            }
         }),
         new webpack.optimize.CommonsChunkPlugin("Common"),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-        })
+        }),
+        new CleanWebpackPlugin(applicationDest + '/*')
     ],
     module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                loader: "babel-loader"
-            }
+        rules: [
+            { test: /\.ts$/, include: [applicationSource], loaders: ['ts-loader', 'angular-router-loader'] },
+            { test: /\.html$/, include: [applicationSource], loaders: ['file-loader?publicPath=/,name=[path][name].min.[ext]', { loader: 'html-minify-loader', options: { quotes: true, dom: { lowerCaseTags: false, lowerCaseAttributeNames: false } } }] },
+            { test: /\.s?css$/, include: [applicationSource, nodeModules], loaders: ['file-loader?publicPath=,name=[path][name].min.css', 'extract-loader', 'css-loader?minimize=true', 'sass-loader'] },
+            { test: /\.(woff(2)?|eot|svg|tff)(\?v=\d+\.\d+\.\d+)?$/, include: [nodeModules], loaders: ['file-loader?publicPath=,name=fonts/[name].[ext]'] }
         ]
     }
 };
